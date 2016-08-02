@@ -1,0 +1,11 @@
+name: Maksim Radaman theme
+type: theme
+description: 'Drupal School custom theme'
+
+package: Core
+base theme: bartik
+
+libraries:
+  - MAKSIM_RADAMAN/global-styling
+
+core: '8.x'

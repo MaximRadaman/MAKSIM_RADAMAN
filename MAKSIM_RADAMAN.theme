@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the theme.
+ */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function MAKSIM_RADAMAN_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'node__' . MAKSIM_RADAMAN_get_node_count_type($variables['elements']['#node']);
+}
+
+/**
+ * Implments hook_preprocess_node().
+ */
+function MAKSIM_RADAMAN_preprocess_node( array &$variables) {
+  $variables['attributes']['class'][] = 'node-' . MAKSIM_RADAMAN_get_node_count_type($variables['node']);
+}
+
+/**
+ * Helper.
+ */
+function MAKSIM_RADAMAN_get_node_count_type($node) {
+  if ($node->id() & 1) {
+    return 'odd';
+  }
+  return 'even';
+}

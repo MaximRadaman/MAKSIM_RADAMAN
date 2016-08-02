@@ -1,0 +1,7 @@
+.node__title--odd a{
+    color: red;
+}
+
+.node__title--even a{
+    color: blue;
+}
